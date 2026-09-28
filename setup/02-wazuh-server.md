@@ -1,4 +1,4 @@
-# 03 - Wazuh server
+# 02 - Wazuh server
 
 **Purpose:** Set the SIEM (Manager + Indexer + Dashboard, all in one)
 

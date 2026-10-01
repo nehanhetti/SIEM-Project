@@ -1,7 +1,7 @@
 # SIEM-Project
 SOC home lab using Wazuh and Sysmon to detect Active Directory attacks mapped to MITRE ATT&CK.
 
-I built this project to get hands-on practice with SIEM, in particular triaging alerts against a domain controller. My main goal is to learn what AD attacks look like in Windows and Sysmon telemetry. I'll be using Atomic Red Team to test and detect MITRE ATT&CK techniques, later on I will use an unmanaged attacker box.
+I built this project to get hands-on practice with SIEM, in particular building and triaging alerts against a domain controller. My main goal is to learn what AD attacks look like in Windows and Sysmon telemetry. I'll be using Atomic Red Team to test and detect MITRE ATT&CK techniques, later on I will use an unmanaged attacker box.
 
 ## Network Topology:
 <img width="773" height="611" alt="Network Topology" src="https://github.com/user-attachments/assets/8f096894-ee50-44e7-9396-b0396ac0ac28" />
@@ -37,7 +37,12 @@ Only power on attacker box when generating attack traffic.
 Planned
 
 ## Repo Structure
-Planned
-
+```
+SIEM-Homelab/
+├── README.md
+├── setup/          # My build process for setting up the project
+├── detections/     # Attack write ups
+├── runbooks/       # Alert triaging
+```
 ## Disclaimer
-This is an isolated lab, all activity was performed against systems I own and credentials in configs are placeholders.
+This is an isolated lab, all activity was performed against systems I own.

@@ -2,7 +2,7 @@
 
 ## Description
 
-```__PSScriptPolicyTest_<random>.ps1``` is a file created by powershell on launch to check whether AppLocker or WDAC is enforcing a script policy and then deletes it. Sysmon flags the file creation and Wazuh rule 92213 flags it because malware commonly stage scripts and exes in Temp. The rule is reasonable but level 15 is Wazuh's highest severity and the alert being triggered on every powershell launch would interfere with the real high severity alerts made by the atomics.
+```__PSScriptPolicyTest_<random>.ps1``` is a file created by powershell on launch to check whether AppLocker or WDAC is enforcing a script policy and then deleted. Sysmon flags the file creation and Wazuh rule 92213 flags it because malware commonly stage scripts and exes in Temp. The rule is reasonable but level 15 is Wazuh's highest severity and the alert being triggered on every powershell launch would interfere with the real high severity alerts made by the atomics.
 
 <img width="1897" height="131" alt="Level 15 alerts on the dashboard" src="https://github.com/user-attachments/assets/ae64fa34-74e2-4ed2-bcad-da9cbeed945e"/>
 

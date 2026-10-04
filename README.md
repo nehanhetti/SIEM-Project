@@ -13,7 +13,7 @@ I built this project to get hands-on practice with SIEM, in particular building 
 | wazuh | SIEM (manager + indexer + dashboard) | Ubuntu 24.04 LTS | 2 | 4 GB | 60 GB | 192.168.56.5 | Wazuh 4.14 all-in-one |
 | DC01 | Domain controller, DNS | Windows Server 2022 Core | 2 | 2 GB | 40 GB | 192.168.56.10 | AD DS, DNS, Wazuh Agent, Sysmon |
 | WS01 | Monitored endpoint | Windows 11 Enterprise | 2 | 4 GB | 60 GB | 192.168.56.20 | Sysmon, Wazuh agent, Atomic Red Team |
-| attacker | Unmanaged attacker | Kali | 1 | 2 GB | 15 GB | 192.168.56.30 | impacket, netexec, Responder |
+| attacker | Unmanaged attacker | Kali | 1 | 2 GB | 15 GB | 192.168.56.30 | Various tools |
 
 Olaf Hartong's sysmonmodular is my config of choice
 
@@ -26,7 +26,7 @@ Olaf Hartong's sysmonmodular is my config of choice
 
 ### Resource budget (16 GB host)
 wazuh + DC01 + WS01 ≈ 10 GB of VM RAM,
-Only power on attacker box when generating attack traffic.
+attacker box will only be powered on when generating attack traffic.
 
 ## Detection Coverage (WIP)
 | ATT&CK ID | Technique | Detected? | Link |

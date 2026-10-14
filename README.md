@@ -41,8 +41,7 @@ Planned
 SIEM-Project/
 ├── README.md
 ├── setup/          # My build process for setting up the project
-├── detections/     # Attack write ups
-├── runbooks/       # Alert triaging
+├── runbooks/       # Attack writeups and alert triaging
 ```
 ## Disclaimer
 This is an isolated lab, all activity was performed against systems I own.

@@ -29,9 +29,9 @@ wazuh + DC01 + WS01 ≈ 10 GB of VM RAM,
 attacker box will only be powered on when generating attack traffic.
 
 ## Detection Coverage (WIP)
-| ATT&CK ID | Technique | Detected? | Link |
-|---|---|---|---|
-| Planned | Planned | Planned | Planned | 
+| ATT&CK ID | Technique | Detected? | Detection | Runbook |
+|---|---|---|---|---|
+| T1136.001 | Create Local Account | Yes | [View](detections/T1136.001-2026-10-14-lab-execution.md) | [View](runbooks/T1136.001-local-account-creation.md) |
 
 ## Key Findings
 Planned
@@ -40,8 +40,9 @@ Planned
 ```
 SIEM-Project/
 ├── README.md
-├── setup/          # My build process for setting up the project
-├── runbooks/       # Attack writeups and alert triaging
+├── setup/         # My build process for setting up the project
+├── runbooks/      # Attack triaging guides
+├── detections/    # Attack writeups
 ```
 ## Disclaimer
 This is an isolated lab, all activity was performed against systems I own.

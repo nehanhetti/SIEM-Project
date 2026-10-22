@@ -14,15 +14,6 @@ The atomic will run a script to create a new user in a command prompt. Test can 
 |60110|User account changed|8|Security|4738|
 |60170|Users Group changed|5|Security|4732|
 
-## Test results and telemetry
-<img width="1896" height="346" alt="image" src="https://github.com/user-attachments/assets/7c33203b-b074-4249-b62e-adc8caa59d90" />
-
-<sub>**Figure 1: Wazuh events of completed test**</sub>
-
-<img width="953" height="780" alt="image" src="https://github.com/user-attachments/assets/309744a9-bfb2-4c7f-9df9-f3d7c2cb1ec8" />
-
-<sub>**Figure 2: Document details of level 12 event**</sub>
-
 ## JSON excerpt of level 12 event
 ```
 {
@@ -78,3 +69,38 @@ The atomic will run a script to create a new user in a command prompt. Test can 
     }
 ```
 
+## Triage
+Check if the account name/creation is not expected, "T1136.001_CMD".
+
+Created through net1.exe in TEMP.
+
+LAB/nehan.adm ran the command, possible compromise of nehan.adm credentials.
+
+Account has not logged in yet.
+
+Was not added to a privleged group. (Only in local Users)
+
+Conclusion: Moderate urgency, unusual behaviour.
+
+## Containment
+Disable the account immediately. `Disable-LocalUser -Name "AtomicLab!2026"`
+
+Don't delete yet, preserve for forensic review.
+
+## Dealing with admin account
+First, check for any active sessions `query session`
+
+If there is evidence of an active session, isolate WS01 from the network. 
+
+Reset nehan.adm password immediately `Set-ADAccountPassword -Identity "nehan.adm" -Reset -NewPassword (ConvertTo-SecureString "<New Secure Password>" -AsPlainText -Force`
+
+Password reset doesn't revoke existing kerberos tickets, force immediate invalidation by disabling and re-enabling the account.
+
+## Test results and telemetry
+<img width="1896" height="346" alt="image" src="https://github.com/user-attachments/assets/7c33203b-b074-4249-b62e-adc8caa59d90" />
+
+<sub>**Figure 1: Wazuh events of completed test**</sub>
+
+<img width="953" height="780" alt="image" src="https://github.com/user-attachments/assets/309744a9-bfb2-4c7f-9df9-f3d7c2cb1ec8" />
+
+<sub>**Figure 2: Excerpt of document details for level 12 event**</sub>

@@ -32,9 +32,7 @@ attacker box will only be powered on when generating attack traffic.
 | ATT&CK ID | Technique | Detected? | Detection | Runbook |
 |---|---|---|---|---|
 | T1136.001 | Create Local Account | Yes | [View](detections/T1136.001-2026-10-14-lab-execution.md) | [View](runbooks/T1136.001-local-account-creation.md) |
-
-## Key Findings
-Planned
+| T1136.002 | Create Domain Account | WIP | WIP | WIP |
 
 ## Repo Structure
 ```

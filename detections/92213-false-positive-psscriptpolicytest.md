@@ -100,12 +100,6 @@ I also wanted to make sure 92213 still fires. To do this I created a file called
 
 <sub>**Figure 4: drop test being flagged as 92213**</sub>
 
-&nbsp;
-
-<img width="950" height="801" alt="Document details of verification test" src="https://github.com/user-attachments/assets/51a3050f-d79b-47ee-a914-4d03e0e2fc2c"/>
-
-<sub>**Figure 5: Document details of the new alert**</sub>
-
 ## Limitations
 
 - Only covers "powershell.exe"
